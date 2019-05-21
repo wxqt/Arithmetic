@@ -4,7 +4,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
     this->setWindowTitle(tr("四则运算出题软件"));
-    this->resize(600, 550);
+    this->resize(700, 550);
 
     setupMenuBar();
     setupStatusBar();
@@ -34,7 +34,7 @@ void MainWindow::on_actSetFont_triggered()
 
 void MainWindow::on_actHelp_triggered()
 {
-    QString str = "版本: 0.1.0\n\n制作: 五行缺铁\n\nQQ: 19691705";
+    QString str = "版本: 0.2.0\n\n制作: 五行缺铁\n\nQQ: 19691705";
     QMessageBox::about(this, tr("关于"), str);
 }
 

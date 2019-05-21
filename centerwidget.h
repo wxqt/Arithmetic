@@ -25,8 +25,8 @@ class CenterWidget : public QWidget
 public:
     explicit CenterWidget(QWidget *parent = nullptr);
 
-    QStringList getOneNum(int index);
-    QStringList getTowNum(int index);
+    QStringList getOneNum(int min, int max);
+    QStringList getTowNum(int min, int max);
     QStringList getOperator(int index);
 
     QTextEdit *textEdit;
@@ -38,23 +38,32 @@ public slots:
     void on_btnGencrate_clicked();
     void on_btnExport_clicked();
     void on_btnPrint_clicked();
-
     void printDocument(QPrinter *printer);
+    void on_sbxOneNumMin_valueChanged(int value);
+    void on_sbxOneNumMax_valueChanged(int value);
+    void on_sbxTwoNumMin_valueChanged(int value);
+    void on_sbxTwoNumMax_valueChanged(int value);
+    void on_sbxOperator_currentIndexChanged(int index);
 
 private:
     void createWidget();
     void createLayout();
 
+    void documentConversion(QStringList &twoStrList, QStringList &oneStrList, QStringList operatorStr);
+
     QLabel *labOne;
-    QLabel *labTow;
+    QLabel *labTwo;
+    QLabel *labWaveOne;
+    QLabel *labWaveTwo;
     QLabel *labOperator;
     QLabel *labFrequency;
 
-    QComboBox *cbxOneNum;
-    QComboBox *cbxTowNum;
-    QComboBox *cbxOperator;
-
+    QSpinBox *sbxOneNumMin;
+    QSpinBox *sbxOneNumMax;
+    QSpinBox *sbxTwoNumMin;
+    QSpinBox *sbxTwoNumMax;
     QSpinBox *sbxFrequency;
+    QComboBox *cbxOperator;
 
     QPushButton *btnGencrate;
     QPushButton *btnExport;
