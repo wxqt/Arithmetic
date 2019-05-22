@@ -19,7 +19,7 @@ QStringList CenterWidget::getOneNum(int min , int max)
     QTime time;
     time = QTime::currentTime();
     int seed = time.msec() + time.second() * 1000;
-    qsrand((uint)seed);
+    qsrand(QString::number(seed).toUInt());
 
     for (int i = 0; i < sbxFrequency->value(); i++)
     {
@@ -37,7 +37,7 @@ QStringList CenterWidget::getTowNum(int min, int max)
     QTime time;
     time = QTime::currentTime();
     int seed = time.msec() + time.second() * 2000;
-    qsrand((uint)seed);
+    qsrand(QString::number(seed).toUInt());
 
     for (int i = 0; i < sbxFrequency->value(); i++)
     {
@@ -55,7 +55,7 @@ QStringList CenterWidget::getOperator(int index)
     QTime time;
     time = QTime::currentTime();
     int seed = time.msec() + time.second() * 1000;
-    qsrand((uint)seed);
+    qsrand(QString::number(seed).toUInt());
 
     if (index == 4)
     {
@@ -378,7 +378,7 @@ void CenterWidget::documentConversion(QStringList &twoStrList, QStringList &oneS
     QTime time;
     time = QTime::currentTime();
     int seed = time.msec() + time.second() * 1000;
-    qsrand((uint)seed);
+    qsrand(QString::number(seed).toUInt());
 
     for(int i = 0; i < sbxFrequency->value(); i++)
     {
